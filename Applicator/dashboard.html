@@ -38,6 +38,32 @@
         height: 300px;
         width: 100%;
       }
+      .card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      .card-body {
+        padding: 1.5rem;
+      }
+      .card-title {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      .display-4 {
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+      @media (max-width: 767.98px) {
+        .display-4 {
+          font-size: 2rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -199,6 +225,41 @@
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
           >
             <h1 class="h2">Dashboard</h1>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-md-3 mb-3">
+              <div class="card bg-primary text-white h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Total Jobs</h5>
+                  <h2 class="display-4">156</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <div class="card bg-success text-white h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Total Revenue</h5>
+                  <h2 class="display-4">$52,450</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <div class="card bg-warning text-dark h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Active Bids</h5>
+                  <h2 class="display-4">23</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <div class="card bg-info text-white h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Customer Rating</h5>
+                  <h2 class="display-4">4.8</h2>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="row">
