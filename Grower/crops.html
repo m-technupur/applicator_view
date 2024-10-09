@@ -152,35 +152,33 @@
         <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
           <div class="position-sticky pt-3">
             <ul class="nav flex-column">
-              <!-- Existing nav items -->
               <li class="nav-item">
-                <a class="nav-link" href="profile.html">
-                  <i class="fas fa-user me-2"></i> Profile
+                <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#setupSubmenu" aria-expanded="false">
+                  <i class="fas fa-cogs me-2"></i> Setup
                 </a>
+                <ul class="nav flex-column collapse show" id="setupSubmenu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="profile.html">
+                      <i class="fas fa-user me-2"></i> Profile
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="farms.html">
+                      <i class="fas fa-tractor me-2"></i> Farms
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="crops.html">
+                      <i class="fas fa-seedling me-2"></i> Crops
+                    </a>
+                  </li>
+                </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="farms.html">
-                  <i class="fas fa-tractor me-2"></i> Farms
-                </a>
-              </li>
-              <!-- Crop submenu -->
-              <li class="nav-item active">
-                <a class="nav-link active" href="crops.html">
-                  <i class="fas fa-seedling me-2"></i> Crops
-                </a>
-              </li>
-              <!-- Rest of the nav items -->
               <li class="nav-item">
                 <a class="nav-link" href="jobs.html">
                   <i class="fas fa-briefcase me-2"></i> Jobs
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="bids.html">
-                  <i class="fas fa-gavel me-2"></i> Bids
-                </a>
-              </li>
-
               <li class="nav-item">
                 <a class="nav-link" href="invoices.html">
                   <i class="fas fa-file me-2"></i> Invoices
