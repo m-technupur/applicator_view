@@ -242,114 +242,131 @@
         <!-- Main Content -->
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 content">
           <h1 class="h2">Create a new Job</h1>
-          <!-- (Existing main content header) -->
-          <div
-            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-          >
-            
-   <form id="new-job-form">
-            <!-- Job Details Section -->
-            <fieldset class="border p-4 mb-4">
-                <legend class="w-auto px-2">Job Details</legend>
-                <div class="row g-3">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <form id="new-job-form">
+              <div id="form-steps">
+                <!-- Step 1: Job Basics -->
+                <div class="step" id="step1">
+                  <h3>Step 1: Job Basics</h3>
+                  <div class="row g-3">
                     <div class="col-md-6">
-                        <label for="job_id" class="form-label">Job ID</label>
-                        <input type="number" class="form-control" value="4545786" id="job_id" name="job_id" readonly style="background-color: rgb(240, 233, 233);" />
+                      <label for="job_id" class="form-label">Job ID</label>
+                      <input type="number" class="form-control" value="4545786" id="job_id" name="job_id" readonly style="background-color: rgb(240, 233, 233);" />
                     </div>
                     <div class="col-md-6">
-                        <label for="field_id" class="form-label">Field ID</label>
-                                            <select id="field_id" name="field_id" class="form-control" required>
-                <option value="">Select Field</option>
-                <option value="301">301 - Field A</option>
-                <option value="302">302 - Field B</option>
-            </select>
-                       
+                      <label for="field_id" class="form-label">Field ID</label>
+                      <select id="field_id" name="field_id" class="form-control" required>
+                        <option value="">Select Field</option>
+                        <option value="301">301 - Field A</option>
+                        <option value="302">302 - Field B</option>
+                      </select>
                     </div>
                     <div class="col-md-6">
-                        <label for="job_status" class="form-label">Job Status</label>
-                        <select class="form-select" id="job_status" name="job_status">
-                            <option value="Requested">Requested</option>
-                            <option value="In Progress">In Progress</option>
-                            <option value="Completed">Completed</option>
-                        </select>
+                      <label for="job_status" class="form-label">Job Status</label>
+                      <select class="form-select" id="job_status" name="job_status">
+                        <option value="Requested">Requested</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                      </select>
                     </div>
                     <div class="col-md-6">
-                        <label for="job_type" class="form-label">Job Type</label>
-                        <select class="form-select" id="job_type" name="job_type">
-                            <option value="Aerial">Aerial</option>
-                            <option value="Ground">Ground</option>
-                        </select>
+                      <label for="job_type" class="form-label">Job Type</label>
+                      <select class="form-select" id="job_type" name="job_type">
+                        <option value="Aerial">Aerial</option>
+                        <option value="Ground">Ground</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Step 2: Job Details -->
+                <div class="step" id="step2" style="display: none;">
+                  <h3>Step 2: Job Details</h3>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="job_category" class="form-label">Job Category (Optional)</label>
+                      <input type="text" class="form-control" id="job_category" name="job_category" />
                     </div>
                     <div class="col-md-6">
-                        <label for="job_category" class="form-label">Job Category (Optional)</label>
-                        <input type="text" class="form-control" id="job_category" name="job_category" />
-                    </div>
-                
-                    <div class="col-md-6">
-                        <label for="unit_type" class="form-label">Unit Type</label>
-                        <select class="form-select" id="unit_type" name="unit_type">
-                            <option value="Per Acre">Per Acre</option>
-                            <option value="Per Hour">Per Hour</option>
-                        </select>
+                      <label for="unit_type" class="form-label">Unit Type</label>
+                      <select class="form-select" id="unit_type" name="unit_type">
+                        <option value="Per Acre">Per Acre</option>
+                        <option value="Per Hour">Per Hour</option>
+                      </select>
                     </div>
                     <div class="col-md-6">
-                        <label for="quantity" class="form-label">Quantity</label>
-                        <input type="number" class="form-control" step="0.01" id="quantity" name="quantity" required />
+                      <label for="quantity" class="form-label">Quantity</label>
+                      <input type="number" class="form-control" step="0.01" id="quantity" name="quantity" required />
                     </div>
                     <div class="col-md-6">
-                        <label for="quantity" class="form-label">Pest</label>
-                        <input type="text" class="form-control" step="0.01" id="quantity" name="quantity" required />
+                      <label for="pest" class="form-label">Pest</label>
+                      <input type="text" class="form-control" id="pest" name="pest" required />
                     </div>
-                           <div class="col-md-6">
-                        <label for="quantity" class="form-label">Purpose</label>
-                        <select id="job_pest" class="form-select" name="job[pest]"><option value="1">Disease</option>
-<option value="2">Insects</option>
-<option value="3">Weeds</option>
-<option value="4">Fertility</option>
-<option value="5">Seed</option>
-<option value="6">Disease/Insects</option>
-<option value="7">Disease/Weeds</option>
-<option value="8">Insects/Weeds</option>
-<option value="9">Disease/Insects/Weeds</option>
-<option value="10">Pre-Harvest Burndown</option>
-<option value="11">Weeds/Fertility</option>
-<option value="12">Pre-Seed Burnoff</option>
-<option value="13">Disease/Fertility</option>
-<option value="15">Disease/Fertility/Weeds</option>
-<option value="16">Disease/Fertility/Insects</option>
-<option value="14">Cover</option>
-<option value="17">Growth Regulator</option>
-<option value="18">Fertility/Insects</option>
-<option value="19">Defoliate</option>
-<option value="20">Boll Opener</option>
-<option value="21">Defoliate/Boll Opener</option>
-<option value="29">Defoliate/Boll Opener/Growth Regulator</option>
-<option value="22">Growth Regulator/Disease</option>
-<option value="26">Growth Regulator/Insects</option>
-<option value="27">Growth Regulator/Disease/Insects</option>
-<option value="23">Growth Regulator/Disease/Weeds</option>
-<option value="24">Site Prep</option>
-<option value="25">Pre-Emergence</option>
-<option value="28">Burndown/Pre-Emergence</option>
-<option value="0">Other</option></select>
-                    </div> 
+                  </div>
+                </div>
+
+                <!-- Step 3: Crop and Purpose -->
+                <div class="step" id="step3" style="display: none;">
+                  <h3>Step 3: Crop and Purpose</h3>
+                  <div class="row g-3">
                     <div class="col-md-6">
-                        <label for="crop_id" class="form-label">Crop</label>
-                        <select class="form-select" id="unit_type" name="unit_type">
-                            <option value="1">Corn</option>
-                               <option value="1">Soybeans</option>
-                                  <option value="1">Wheat</option>
-                                     <option value="1">Barley</option>
-    
-                        </select>
+                      <label for="job_pest" class="form-label">Purpose</label>
+                      <select id="job_pest" class="form-select" name="job[pest]">
+                        <option value="1">Disease</option>
+                        <option value="2">Insects</option>
+                        <option value="3">Weeds</option>
+                        <option value="4">Fertility</option>
+                        <option value="5">Seed</option>
+                        <option value="6">Disease/Insects</option>
+                        <option value="7">Disease/Weeds</option>
+                        <option value="8">Insects/Weeds</option>
+                        <option value="9">Disease/Insects/Weeds</option>
+                        <option value="10">Pre-Harvest Burndown</option>
+                        <option value="11">Weeds/Fertility</option>
+                        <option value="12">Pre-Seed Burnoff</option>
+                        <option value="13">Disease/Fertility</option>
+                        <option value="15">Disease/Fertility/Weeds</option>
+                        <option value="16">Disease/Fertility/Insects</option>
+                        <option value="14">Cover</option>
+                        <option value="17">Growth Regulator</option>
+                        <option value="18">Fertility/Insects</option>
+                        <option value="19">Defoliate</option>
+                        <option value="20">Boll Opener</option>
+                        <option value="21">Defoliate/Boll Opener</option>
+                        <option value="29">Defoliate/Boll Opener/Growth Regulator</option>
+                        <option value="22">Growth Regulator/Disease</option>
+                        <option value="26">Growth Regulator/Insects</option>
+                        <option value="27">Growth Regulator/Disease/Insects</option>
+                        <option value="23">Growth Regulator/Disease/Weeds</option>
+                        <option value="24">Site Prep</option>
+                        <option value="25">Pre-Emergence</option>
+                        <option value="28">Burndown/Pre-Emergence</option>
+                        <option value="0">Other</option>
+                      </select>
                     </div>
-                     <div class="col-md-6">
-                        <label for="quantity" class="form-label">Start Date</label>
-                        <input type="date" class="form-control" step="0.01" id="quantity" name="quantity" required />
+                    <div class="col-md-6">
+                      <label for="crop_id" class="form-label">Crop</label>
+                      <select class="form-select" id="crop_id" name="crop_id">
+                        <option value="1">Corn</option>
+                        <option value="2">Soybeans</option>
+                        <option value="3">Wheat</option>
+                        <option value="4">Barley</option>
+                      </select>
                     </div>
-                     <div class="col-md-6">
-                        <label for="quantity" class="form-label">End Date</label>
-                        <input type="date" class="form-control" step="0.01" id="quantity" name="quantity" required />
+                  </div>
+                </div>
+
+                <!-- Step 4: Dates and Application -->
+                <div class="step" id="step4" style="display: none;">
+                  <h3>Step 4: Dates and Application</h3>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="start_date" class="form-label">Start Date</label>
+                      <input type="date" class="form-control" id="start_date" name="start_date" required />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="end_date" class="form-label">End Date</label>
+                      <input type="date" class="form-control" id="end_date" name="end_date" required />
                     </div>
                      
               
