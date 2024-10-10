@@ -862,9 +862,9 @@
 
         // Sample quotes data (replace this with actual data fetching logic)
         const quotes = [
-          { applicator: "John's Spraying Service", amount: "$2,300", date: "2024-05-14", status: "Pending" },
-          { applicator: "Green Thumb Fertilizers", amount: "$2,500", date: "2024-05-15", status: "Accepted" },
-          { applicator: "Crop Care Experts", amount: "$2,400", date: "2024-05-16", status: "Rejected" },
+          { applicator: "John's Spraying Service", amount: "$2,300", date: "2024-05-14" },
+          { applicator: "Green Thumb Fertilizers", amount: "$2,500", date: "2024-05-15" },
+          { applicator: "Crop Care Experts", amount: "$2,400", date: "2024-05-16" },
         ];
 
         quotes.forEach(quote => {
@@ -873,10 +873,9 @@
             <td>${quote.applicator}</td>
             <td>${quote.amount}</td>
             <td>${quote.date}</td>
-            <td><span class="badge bg-${quote.status === 'Accepted' ? 'success' : quote.status === 'Rejected' ? 'danger' : 'warning'}">${quote.status}</span></td>
             <td>
-              <button class="btn btn-sm btn-primary">View Details</button>
-              ${quote.status === 'Pending' ? '<button class="btn btn-sm btn-success">Accept</button>' : ''}
+              <button class="btn btn-sm btn-success accept-quote">Accept</button>
+              <button class="btn btn-sm btn-danger reject-quote">Reject</button>
             </td>
           `;
           quotesTableBody.appendChild(row);
@@ -884,6 +883,15 @@
 
         document.getElementById('jobIdSpan').textContent = jobId;
       }
+
+      // Event listeners for accept and reject buttons
+      document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('accept-quote')) {
+          e.target.closest('tr').querySelector('td:last-child').innerHTML = '<span class="badge bg-success">Accepted</span>';
+        } else if (e.target.classList.contains('reject-quote')) {
+          e.target.closest('tr').querySelector('td:last-child').innerHTML = '<span class="badge bg-danger">Rejected</span>';
+        }
+      });
 
       // Event listener for the "Show Quotes" button
       document.addEventListener('click', function(e) {
