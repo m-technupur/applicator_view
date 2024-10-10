@@ -30,6 +30,73 @@
       .navbar-brand img {
         height: 30px;
       }
+      .img-fluid {
+        max-width: 50%;
+        height: auto;
+      }
+      .active {
+        background-color: #dedede;
+      }
+      .profile-card {
+        max-width: 800px;
+      }
+      .nav-item .nav-link[data-bs-toggle="collapse"] {
+        position: relative;
+        padding-left: 2.5rem;
+      }
+      .nav-item .nav-link[data-bs-toggle="collapse"]::before {
+        content: "\f0d7";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease-in-out;
+      }
+      .nav-item
+        .nav-link[data-bs-toggle="collapse"][aria-expanded="true"]::before {
+        transform: translateY(-50%) rotate(180deg);
+      }
+      #setupSubmenu {
+        background-color: #e9ecef;
+        border-left: 3px solid #007bff;
+        margin-left: 1.5rem;
+      }
+      #setupSubmenu .nav-link {
+        padding-left: 2rem;
+        font-size: 0.9rem;
+      }
+      #setupSubmenu .nav-link:hover {
+        background-color: #dee2e6;
+      }
+      .sidebar .nav-link {
+        color: #333;
+        font-weight: 500;
+      }
+      .sidebar .nav-link:hover {
+        background-color: #e9ecef;
+      }
+      .sidebar .nav-link.active {
+        color: #007bff;
+        background-color: #e9ecef;
+      }
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 250px;
+        background-color: #f8f9fa;
+        min-height: calc(100vh - 56px);
+      }
+      .content {
+        flex-grow: 1;
+      }
+      .navbar-brand img {
+        height: 30px;
+      }
       .active {
         background-color: #dedede;
       }
@@ -177,38 +244,51 @@
           <div class="position-sticky pt-3">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                  <i class="fas fa-chart-line me-2"></i> Dashboard
-                </a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link active" href="dashboard.html">
+                <a class="nav-link active" href="index.html">
                   <i class="fas fa-chart-line me-2"></i> Dashboard
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="profile.html">
-                  <i class="fas fa-user me-2"></i> Profile
+                <a
+                  class="nav-link"
+                  href="#"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#setupSubmenu"
+                  aria-expanded="false"
+                >
+                  Setup
                 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="farms.html">
-                  <i class="fas fa-tractor me-2"></i> Farms
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="crops.html">
-                  <i class="fas fa-seedling me-2"></i> Crops
-                </a>
+                <ul class="nav flex-column collapse" id="setupSubmenu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="profile.html">
+                      <i class="fas fa-user me-2"></i> Profile
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="crops.html">
+                      <i class="fas fa-seedling me-2"></i> Crops
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pilots.html">
+                      <i class="fas fa-user-tie me-2"></i> Pilots
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="users.html">
+                      <i class="fas fa-users me-2"></i> Users
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="equipment.html">
+                      <i class="fas fa-tractor me-2"></i> Equipment
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="jobs.html">
                   <i class="fas fa-briefcase me-2"></i> Jobs
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="bids.html">
-                  <i class="fas fa-gavel me-2"></i> Bids
                 </a>
               </li>
               <li class="nav-item">
