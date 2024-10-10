@@ -1179,9 +1179,9 @@
 
         // Sample quotes data (replace this with actual data fetching logic)
         const quotes = [
-          { applicator: "John's Spraying Service", amount: "$2,300", date: "2024-05-14", status: "Pending" },
-          { applicator: "Green Thumb Fertilizers", amount: "$2,500", date: "2024-05-15", status: "Pending" },
-          { applicator: "Crop Care Experts", amount: "$2,400", date: "2024-05-16", status: "Pending" },
+          { applicator: "John's Spraying Service", amount: "$2,300", date: "2024-05-14" },
+          { applicator: "Green Thumb Fertilizers", amount: "$2,500", date: "2024-05-15" },
+          { applicator: "Crop Care Experts", amount: "$2,400", date: "2024-05-16" },
         ];
 
         quotes.forEach(quote => {
@@ -1190,7 +1190,7 @@
             <td>${quote.applicator}</td>
             <td>${quote.amount}</td>
             <td>${quote.date}</td>
-            <td><span class="badge bg-${quote.status === 'Accepted' ? 'success' : quote.status === 'Rejected' ? 'danger' : 'warning'}">${quote.status}</span></td>
+            <td>Pending</td>
           `;
           quotesTableBody.appendChild(row);
         });
