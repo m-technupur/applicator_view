@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grower View</title>
+    <title>Applicator View</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -85,7 +85,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"> <h3>Grower View</h3></a>
+        <a class="navbar-brand" href="#"> <h3>Applicator View</h3></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -193,36 +193,50 @@
         <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
           <div class="position-sticky pt-3">
             <ul class="nav flex-column">
-              <!-- Existing nav items -->
               <li class="nav-item">
-                <a class="nav-link" href="profile.html">
-                  <i class="fas fa-user me-2"></i> Profile
+                <a
+                  class="nav-link"
+                  href="#"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#setupSubmenu"
+                  aria-expanded="false"
+                >
+                  Setup
                 </a>
+                <ul class="nav flex-column collapse" id="setupSubmenu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="profile.html">
+                      <i class="fas fa-user me-2"></i> Profile
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="crops.html">
+                      <i class="fas fa-seedling me-2"></i> Crops
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pilots.html">
+                      <i class="fas fa-user-tie me-2"></i> Pilots
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="users.html">
+                      <i class="fas fa-users me-2"></i> Users
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="equipment.html">
+                      <i class="fas fa-tractor me-2"></i> Equipment
+                    </a>
+                  </li>
+                </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="farms.html">
-                  <i class="fas fa-tractor me-2"></i> Farms
-                </a>
-              </li>
-              <!-- Crop submenu -->
-              <li class="nav-item">
-                <a class="nav-link" href="crops.html">
-                  <i class="fas fa-seedling me-2"></i> Crops
-                </a>
-              </li>
-              <!-- Rest of the nav items -->
               <li class="nav-item">
                 <a class="nav-link" href="jobs.html">
                   <i class="fas fa-briefcase me-2"></i> Jobs
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="bids.html">
-                  <i class="fas fa-gavel me-2"></i> Bids
-                </a>
-              </li>
-
-              <li class="nav-item active">
                 <a class="nav-link active" href="invoices.html">
                   <i class="fas fa-file me-2"></i> Invoices
                 </a>
@@ -242,104 +256,115 @@
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
           >
             <h1 class="h2">Invoices</h1>
-            <a href="new_invoice.html" class="btn btn-primary"
+            <!-- <a href="new_invoice.html" class="btn btn-primary"
               >Add New Invoice</a
-            >
+            > -->
           </div>
 
-          <!-- Invoices Form -->
-          <form>
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <label for="invoice_id" class="form-label"
-                  ><strong>Invoice ID:</strong></label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="invoice_id"
-                  value="101"
-                />
-              </div>
-              <div class="col-md-6">
-                <label for="job_id" class="form-label"
-                  ><strong>Job ID:</strong></label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="job_id"
-                  value="201"
-                />
-              </div>
-            </div>
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <label for="grower_id" class="form-label"
-                  ><strong>Grower ID:</strong></label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="grower_id"
-                  value="301"
-                />
-              </div>
-              <div class="col-md-6">
-                <label for="amount_due" class="form-label"
-                  ><strong>Amount Due:</strong></label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="amount_due"
-                  value="1500.00"
-                />
-              </div>
-            </div>
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <label for="payment_status" class="form-label"
-                  ><strong>Payment Status:</strong></label
-                >
-                <select class="form-select" id="payment_status">
-                  <option value="Paid" selected>Paid</option>
-                  <option value="Pending">Pending</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <label for="payment_provider" class="form-label"
-                  ><strong>Payment Provider:</strong></label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="payment_provider"
-                  value="Stripe"
-                />
-              </div>
-            </div>
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <label for="date_paid" class="form-label"
-                  ><strong>Date Paid:</strong></label
-                >
-                <input
-                  type="date"
-                  class="form-control"
-                  id="date_paid"
-                  value="2023-10-01"
-                />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <button type="submit" class="btn btn-primary">
-                  Save Invoice
-                </button>
-              </div>
-            </div>
-          </form>
+          <!-- Table for Invoices -->
+          <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Invoice ID</th>
+                  <th>Job ID</th>
+                  <th>Grower ID</th>
+                  <th>Amount Due</th>
+                  <th>Payment Status</th>
+                  <th>Payment Provider</th>
+                  <th>Date Paid</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>101</td>
+                  <td>201</td>
+                  <td>301</td>
+                  <td>$1,500.00</td>
+                  <td><span class="badge bg-success">Paid</span></td>
+                  <td>Stripe</td>
+                  <td>2024-05-01</td>
+                  <td>
+                    <a href="edit_invoice.html" class="btn btn-sm btn-warning"
+                      ><i class="fas fa-edit"></i> Edit</a
+                    >
+                    <a href="view_invoice.html" class="btn btn-sm btn-primary"
+                      ><i class="fas fa-eye"></i> View</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>102</td>
+                  <td>202</td>
+                  <td>302</td>
+                  <td>$2,000.00</td>
+                  <td><span class="badge bg-warning">Pending</span></td>
+                  <td>PayPal</td>
+                  <td>-</td>
+                  <td>
+                    <a href="edit_invoice.html" class="btn btn-sm btn-warning"
+                      ><i class="fas fa-edit"></i> Edit</a
+                    >
+                    <a href="view_invoice.html" class="btn btn-sm btn-primary"
+                      ><i class="fas fa-eye"></i> View</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>103</td>
+                  <td>203</td>
+                  <td>303</td>
+                  <td>$3,200.00</td>
+                  <td><span class="badge bg-success">Paid</span></td>
+                  <td>Bank Transfer</td>
+                  <td>2024-05-03</td>
+                  <td>
+                    <a href="edit_invoice.html" class="btn btn-sm btn-warning"
+                      ><i class="fas fa-edit"></i> Edit</a
+                    >
+                    <a href="view_invoice.html" class="btn btn-sm btn-primary"
+                      ><i class="fas fa-eye"></i> View</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>104</td>
+                  <td>204</td>
+                  <td>304</td>
+                  <td>$1,800.00</td>
+                  <td><span class="badge bg-danger">Overdue</span></td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>
+                    <a href="edit_invoice.html" class="btn btn-sm btn-warning"
+                      ><i class="fas fa-edit"></i> Edit</a
+                    >
+                    <a href="view_invoice.html" class="btn btn-sm btn-primary"
+                      ><i class="fas fa-eye"></i> View</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>105</td>
+                  <td>205</td>
+                  <td>305</td>
+                  <td>$2,500.00</td>
+                  <td><span class="badge bg-info">Partially Paid</span></td>
+                  <td>Credit Card</td>
+                  <td>2024-05-05</td>
+                  <td>
+                    <a href="edit_invoice.html" class="btn btn-sm btn-warning"
+                      ><i class="fas fa-edit"></i> Edit</a
+                    >
+                    <a href="view_invoice.html" class="btn btn-sm btn-primary"
+                      ><i class="fas fa-eye"></i> View</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </main>
       </div>
     </div>

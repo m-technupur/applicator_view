@@ -13,6 +13,213 @@
       rel="stylesheet"
     />
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.formbold-main-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+}
+
+.formbold-form-wrapper {
+  margin: 0 auto;
+  width: 100%;
+  background: white;
+}
+
+.formbold-steps {
+  padding-bottom: 18px;
+  margin-bottom: 35px;
+  border-bottom: 1px solid #DDE3EC;
+}
+
+.formbold-steps ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.formbold-steps li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #536387;
+}
+
+.formbold-steps li span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #DDE3EC;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #536387;
+}
+
+.formbold-steps li.active {
+  color: #07074D;
+}
+
+.formbold-steps li.active span {
+  background: #6A64F1;
+  color: #FFFFFF;
+}
+
+.formbold-input-flex {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.formbold-input-flex > div {
+  width: 50%;
+}
+
+.formbold-form-input {
+  width: 100%;
+  padding: 13px 22px;
+  border-radius: 5px;
+  border: 1px solid #DDE3EC;
+  background: #FFFFFF;
+  font-weight: 500;
+  font-size: 16px;
+  color: #536387;
+  outline: none;
+  resize: none;
+}
+
+.formbold-form-input:focus {
+  border-color: #6a64f1;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.formbold-form-label {
+  color: #07074D;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.formbold-form-confirm {
+  border-bottom: 1px solid #DDE3EC;
+  padding-bottom: 35px;
+}
+
+.formbold-form-confirm p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #536387;
+  margin-bottom: 22px;
+  width: 75%;
+}
+
+.formbold-form-confirm > div {
+  display: flex;
+  gap: 15px;
+}
+
+.formbold-confirm-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #FFFFFF;
+  border: 0.5px solid #DDE3EC;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #536387;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: all .3s ease-in-out;
+}
+
+.formbold-confirm-btn {
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.formbold-confirm-btn.active {
+  background: #6A64F1;
+  color: #FFFFFF;
+}
+
+.formbold-form-step-1,
+.formbold-form-step-2,
+.formbold-form-step-3,
+.formbold-form-step-4,
+.formbold-form-step-5 {
+  display: none;
+}
+
+.formbold-form-step-1.active,
+.formbold-form-step-2.active,
+.formbold-form-step-3.active,
+.formbold-form-step-4.active,
+.formbold-form-step-5.active {
+  display: block;
+}
+
+.formbold-form-btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.formbold-back-btn {
+  cursor: pointer;
+  background: #FFFFFF;
+  border: none;
+  color: #07074D;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  display: none;
+}
+
+.formbold-back-btn.active {
+  display: block;
+}
+
+.formbold-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 10px 25px;
+  border: none;
+  font-weight: 500;
+  background-color: #6A64F1;
+  color: white;
+  cursor: pointer;
+}
+
+.formbold-btn:hover {
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
       body {
         min-height: 100vh;
         display: flex;
@@ -33,9 +240,7 @@
     max-width: 50%;
     height: auto;
 }
-      .active {
-        background-color: #dedede;
-      }
+
       .profile-card {
         max-width: 800px;
       }
@@ -175,7 +380,7 @@
                 </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <a class="dropdown-item" href="#"
+                  <a class="dropdown-item" href="../index.html"
                     ><i class="fas fa-sign-out-alt me-2"></i>Logout</a
                   >
                 </li>
@@ -242,251 +447,258 @@
         <!-- Main Content -->
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 content">
           <h1 class="h2">Create a new Job</h1>
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <form id="new-job-form">
-              <div id="form-steps">
-                <!-- Step 1: Job Basics -->
-                <div class="step" id="step1">
-                  <h3>Step 1: Job Basics</h3>
-                  <div class="row g-3">
-                    <div class="col-md-6">
-                      <label for="job_id" class="form-label">Job ID</label>
-                      <input type="number" class="form-control" value="4545786" id="job_id" name="job_id" readonly style="background-color: rgb(240, 233, 233);" />
-                    </div>
-                    <div class="col-md-6">
-                      <label for="field_id" class="form-label">Field ID</label>
-                      <select id="field_id" name="field_id" class="form-control" required>
-                        <option value="">Select Field</option>
-                        <option value="301">301 - Field A</option>
-                        <option value="302">302 - Field B</option>
-                      </select>
-                    </div>
-                    <div class="col-md-6">
-                      <label for="job_status" class="form-label">Job Status</label>
-                      <select class="form-select" id="job_status" name="job_status">
-                        <option value="Requested">Requested</option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                      </select>
-                    </div>
-                    <div class="col-md-6">
-                      <label for="job_type" class="form-label">Job Type</label>
-                      <select class="form-select" id="job_type" name="job_type">
-                        <option value="Aerial">Aerial</option>
-                        <option value="Ground">Ground</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
+          <!-- (Existing main content header) -->
+          <div
+            class="justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+          >
+            
+<div class="formbold-main-wrapper">
+  <!-- Author: FormBold Team -->
+  <!-- Learn More: https://formbold.com -->
+  <div class="formbold-form-wrapper">
+<form id="new-job-form">
+  <div class="formbold-steps">
+    <ul>
+      <li class="formbold-step-menu1 active">
+        <span>1</span>
+        Job Basics
+      </li>
+      <li class="formbold-step-menu2">
+        <span>2</span>
+        Job Details
+      </li>
+      <li class="formbold-step-menu3">
+        <span>3</span>
+        Crop and Purpose
+      </li>
+      <li class="formbold-step-menu4">
+        <span>4</span>
+        Dates and Application
+      </li>
+      <li class="formbold-step-menu5">
+        <span>5</span>
+        Additional Info
+      </li>
+    </ul>
+  </div>
 
-                <!-- Step 2: Job Details -->
-                <div class="step" id="step2" style="display: none;">
-                  <h3>Step 2: Job Details</h3>
-                  <div class="row g-3">
-                    <div class="col-md-6">
-                      <label for="job_category" class="form-label">Job Category (Optional)</label>
-                      <input type="text" class="form-control" id="job_category" name="job_category" />
-                    </div>
-                    <div class="col-md-6">
-                      <label for="unit_type" class="form-label">Unit Type</label>
-                      <select class="form-select" id="unit_type" name="unit_type">
-                        <option value="Per Acre">Per Acre</option>
-                        <option value="Per Hour">Per Hour</option>
-                      </select>
-                    </div>
-                    <div class="col-md-6">
-                      <label for="quantity" class="form-label">Quantity</label>
-                      <input type="number" class="form-control" step="0.01" id="quantity" name="quantity" required />
-                    </div>
-                    <div class="col-md-6">
-                      <label for="pest" class="form-label">Pest</label>
-                      <input type="text" class="form-control" id="pest" name="pest" required />
-                    </div>
-                  </div>
-                </div>
+  <div class="formbold-form-step-1 active">
+    <h3>Step 1: Job Basics</h3>
+    <div class="formbold-input-flex">
+      <div>
+        <label for="job_id" class="formbold-form-label">Job ID</label>
+        <input type="number" class="formbold-form-input" value="4545786" id="job_id" name="job_id" readonly style="background-color: rgb(240, 233, 233);" />
+      </div>
+      <div>
+        <label for="field_id" class="formbold-form-label">Field ID</label>
+        <select id="field_id" name="field_id" class="formbold-form-input" required>
+          <option value="">Select Field</option>
+          <option value="301">301 - Field A</option>
+          <option value="302">302 - Field B</option>
+        </select>
+      </div>
+    </div>
+    <div class="formbold-input-flex">
+      <div>
+        <label for="job_status" class="formbold-form-label">Job Status</label>
+        <select class="formbold-form-input" id="job_status" name="job_status">
+          <option value="Requested">Requested</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Completed">Completed</option>
+        </select>
+      </div>
+      <div>
+        <label for="job_type" class="formbold-form-label">Job Type</label>
+        <select class="formbold-form-input" id="job_type" name="job_type">
+          <option value="Aerial">Aerial</option>
+          <option value="Ground">Ground</option>
+        </select>
+      </div>
+    </div>
+  </div>
 
-                <!-- Step 3: Crop and Purpose -->
-                <div class="step" id="step3" style="display: none;">
-                  <h3>Step 3: Crop and Purpose</h3>
-                  <div class="row g-3">
-                    <div class="col-md-6">
-                      <label for="job_pest" class="form-label">Purpose</label>
-                      <select id="job_pest" class="form-select" name="job[pest]">
-                        <option value="1">Disease</option>
-                        <option value="2">Insects</option>
-                        <option value="3">Weeds</option>
-                        <option value="4">Fertility</option>
-                        <option value="5">Seed</option>
-                        <option value="6">Disease/Insects</option>
-                        <option value="7">Disease/Weeds</option>
-                        <option value="8">Insects/Weeds</option>
-                        <option value="9">Disease/Insects/Weeds</option>
-                        <option value="10">Pre-Harvest Burndown</option>
-                        <option value="11">Weeds/Fertility</option>
-                        <option value="12">Pre-Seed Burnoff</option>
-                        <option value="13">Disease/Fertility</option>
-                        <option value="15">Disease/Fertility/Weeds</option>
-                        <option value="16">Disease/Fertility/Insects</option>
-                        <option value="14">Cover</option>
-                        <option value="17">Growth Regulator</option>
-                        <option value="18">Fertility/Insects</option>
-                        <option value="19">Defoliate</option>
-                        <option value="20">Boll Opener</option>
-                        <option value="21">Defoliate/Boll Opener</option>
-                        <option value="29">Defoliate/Boll Opener/Growth Regulator</option>
-                        <option value="22">Growth Regulator/Disease</option>
-                        <option value="26">Growth Regulator/Insects</option>
-                        <option value="27">Growth Regulator/Disease/Insects</option>
-                        <option value="23">Growth Regulator/Disease/Weeds</option>
-                        <option value="24">Site Prep</option>
-                        <option value="25">Pre-Emergence</option>
-                        <option value="28">Burndown/Pre-Emergence</option>
-                        <option value="0">Other</option>
-                      </select>
-                    </div>
-                    <div class="col-md-6">
-                      <label for="crop_id" class="form-label">Crop</label>
-                      <select class="form-select" id="crop_id" name="crop_id">
-                        <option value="1">Corn</option>
-                        <option value="2">Soybeans</option>
-                        <option value="3">Wheat</option>
-                        <option value="4">Barley</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
+  <div class="formbold-form-step-2">
+    <h3>Step 2: Job Details</h3>
+    <div class="formbold-input-flex">
+      <div>
+        <label for="job_category" class="formbold-form-label">Job Category (Optional)</label>
+        <input type="text" class="formbold-form-input" id="job_category" name="job_category" />
+      </div>
+      <div>
+        <label for="unit_type" class="formbold-form-label">Unit Type</label>
+        <select class="formbold-form-input" id="unit_type" name="unit_type">
+          <option value="Per Acre">Per Acre</option>
+          <option value="Per Hour">Per Hour</option>
+        </select>
+      </div>
+    </div>
+    <div class="formbold-input-flex">
+      <div>
+        <label for="quantity" class="formbold-form-label">Quantity</label>
+        <input type="number" class="formbold-form-input" step="0.01" id="quantity" name="quantity" required />
+      </div>
+      <div>
+        <label for="pest" class="formbold-form-label">Pest</label>
+        <input type="text" class="formbold-form-input" id="pest" name="pest" required />
+      </div>
+    </div>
+  </div>
 
-                <!-- Step 4: Dates and Application -->
-                <div class="step" id="step4" style="display: none;">
-                  <h3>Step 4: Dates and Application</h3>
-                  <div class="row g-3">
-                    <div class="col-md-6">
-                      <label for="start_date" class="form-label">Start Date</label>
-                      <input type="date" class="form-control" id="start_date" name="start_date" required />
-                    </div>
-                    <div class="col-md-6">
-                      <label for="end_date" class="form-label">End Date</label>
-                      <input type="date" class="form-control" id="end_date" name="end_date" required />
-                    </div>
-                     
-              
-            <!-- </fieldset> -->
+  <div class="formbold-form-step-3">
+    <h3>Step 3: Crop and Purpose</h3>
+    <div class="formbold-input-flex">
+      <div>
+        <label for="job_pest" class="formbold-form-label">Purpose</label>
+        <select id="job_pest" class="formbold-form-input" name="job[pest]">
+          <option value="1">Disease</option>
+          <option value="2">Insects</option>
+          <option value="3">Weeds</option>
+          <!-- Add other options here -->
+        </select>
+      </div>
+      <div>
+        <label for="crop_id" class="formbold-form-label">Crop</label>
+        <select class="formbold-form-input" id="crop_id" name="crop_id">
+          <option value="1">Corn</option>
+          <option value="2">Soybeans</option>
+          <option value="3">Wheat</option>
+          <option value="4">Barley</option>
+        </select>
+      </div>
+    </div>
+  </div>
 
-            <!-- Field Information Section -->
-            <!-- <fieldset class="border p-4 mb-4">
-                <legend class="w-auto px-2">Field Information</legend>
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <label for="center_lat" class="form-label">Center Latitude</label>
-                        <input type="number" step="0.000001" class="form-control" id="center_lat" name="center_lat" required />
-                    </div>
-                    <div class="col-md-6">
-                        <label for="center_long" class="form-label">Center Longitude</label>
-                        <input type="number" step="0.000001" class="form-control" id="center_long" name="center_long" required />
-                    </div>
-                    <div class="col-md-6">
-                        <label for="crop_id" class="form-label">Crop ID</label>
-                        <input type="number" class="form-control" id="crop_id" name="crop_id" required />
-                    </div>
-                </div>
-            </fieldset> -->
+  <div class="formbold-form-step-4">
+    <h3>Step 4: Dates and Application</h3>
+    <div class="formbold-input-flex">
+      <div>
+        <label for="start_date" class="formbold-form-label">Start Date</label>
+        <input type="date" class="formbold-form-input" id="start_date" name="start_date" required />
+      </div>
+      <div>
+        <label for="end_date" class="formbold-form-label">End Date</label>
+        <input type="date" class="formbold-form-input" id="end_date" name="end_date" required />
+      </div>
+    </div>
+    <div class="formbold-input-flex">
+      <div>
+        <label for="estimated_app_date" class="formbold-form-label">Estimated Application Date</label>
+        <input type="date" class="formbold-form-input" id="estimated_app_date" name="estimated_app_date" />
+      </div>
+      <div>
+        <label for="GPA" class="formbold-form-label">Gallons per Acre (GPA)</label>
+        <input type="number" step="0.01" class="formbold-form-input" id="GPA" name="GPA" />
+      </div>
+    </div>
+  </div>
 
-            <!-- Applicator and Products Section -->
-            <!-- <fieldset class="border p-4 mb-4">
-                <legend class="w-auto px-2">Applicator & Products</legend>
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <label for="applicator_id" class="form-label">Applicator ID</label>
-                        <input type="number" class="form-control" id="applicator_id" name="applicator_id" required />
-                    </div>
-                    <div class="col-md-6">
-                        <label for="customer_products" class="form-label">Customer Products</label>
-                        <textarea class="form-control" id="customer_products" name="customer_products"></textarea>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="products_applied" class="form-label">Products Applied</label>
-                        <textarea class="form-control" id="products_applied" name="products_applied"></textarea>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="purpose" class="form-label">Purpose</label>
-                        <input type="text" class="form-control" id="purpose" name="purpose" />
-                    </div>
-                    <div class="col-md-6">
-                        <label for="pest" class="form-label">Pests Targeted</label>
-                        <input type="text" class="form-control" id="pest" name="pest" />
-                    </div>
-                </div>
-            </fieldset> -->
+  <div class="formbold-form-step-5">
+    <h3>Step 5: Additional Information</h3>
+    <div class="formbold-input-flex">
+      <div>
+        <label for="last_updated_by" class="formbold-form-label">Last Updated By</label>
+        <input type="text" class="formbold-form-input" value="John Doe" id="last_updated_by" name="last_updated_by" readonly style="background-color: rgb(240, 233, 233);" />
+      </div>
+      <div>
+        <label for="attachments" class="formbold-form-label">Attachments</label>
+        <input type="file" class="formbold-form-input" id="attachments" name="attachments" multiple />
+      </div>
+    </div>
+    <div>
+      <label for="comments" class="formbold-form-label">Comments</label>
+      <textarea class="formbold-form-input" id="comments" name="comments"></textarea>
+    </div>
+  </div>
 
-            <!-- Cost & Invoice Section -->
-            <!-- <fieldset class="border p-4 mb-4">
-                <legend class="w-auto px-2">Cost & Invoice</legend>
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <label for="total_cost" class="form-label">Total Cost</label>
-                        <input type="number" step="0.01" class="form-control" id="total_cost" name="total_cost" readonly />
-                    </div>
-                    <div class="col-md-6">
-                        <label for="invoice_id" class="form-label">Invoice ID</label>
-                        <input type="number" class="form-control" id="invoice_id" name="invoice_id" />
-                    </div>
-                    <div class="col-md-6">
-                        <label for="applied_map" class="form-label">Applied Map ID</label>
-                        <input type="number" class="form-control" id="applied_map" name="applied_map" />
-                    </div>
-                    <div class="col-md-6">
-                        <label for="agent_id" class="form-label">Agent ID</label>
-                        <input type="number" class="form-control" id="agent_id" name="agent_id" />
-                    </div>
-                </div>
-            </fieldset> -->
+  <div class="formbold-form-btn-wrapper">
+    <button class="formbold-back-btn">
+      Back
+    </button>
+    <button class="formbold-btn">
+      Next Step
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_1675_1807)">
+        <path d="M10.7814 7.33312L7.20541 3.75712L8.14808 2.81445L13.3334 7.99979L8.14808 13.1851L7.20541 12.2425L10.7814 8.66645H2.66675V7.33312H10.7814Z" fill="white"/>
+        </g>
+        <defs>
+        <clipPath id="clip0_1675_1807">
+        <rect width="16" height="16" fill="white"/>
+        </clipPath>
+        </defs>
+      </svg>
+    </button>
+  </div>
+</form>
+  </div>
+</div>
 
-            <!-- Additional Information Section
-            <fieldset class="border p-4 mb-4">
-                <legend class="w-auto px-2">Additional Information</legend> -->
-                <div class="row g-3">
+<script>
+  const stepMenus = [
+  document.querySelector('.formbold-step-menu1'),
+  document.querySelector('.formbold-step-menu2'),
+  document.querySelector('.formbold-step-menu3'),
+  document.querySelector('.formbold-step-menu4'),
+  document.querySelector('.formbold-step-menu5')
+];
 
-                    <div class="col-md-6">
-                        <label for="estimated_app_date" class="form-label">Estimated Application Date</label>
-                        <input type="date" class="form-control" id="estimated_app_date" name="estimated_app_date" />
-                    </div>
-                    <!-- <div class="col-md-6">
-                        <label for="created_by" class="form-label">Created By</label>
-                        <input type="text" class="form-control" id="created_by" name="created_by" required />
-                    </div> -->
-                    <!-- <div class="col-md-6">
-                        <label for="last_updated" class="form-label">Last Updated</label>
-                        <input type="datetime-local" class="form-control" id="last_updated" name="last_updated" readonly />
-                    </div> -->
-                    <div class="col-md-6">
-                        <label for="last_updated_by" class="form-label">Last Updated By</label>
-                        <input type="text" class="form-control" value="John Doe" id="last_updated_by" name="last_updated_by" readonly style="background-color: rgb(240, 233, 233);" />
-                    </div>
+const formSteps = [
+  document.querySelector('.formbold-form-step-1'),
+  document.querySelector('.formbold-form-step-2'),
+  document.querySelector('.formbold-form-step-3'),
+  document.querySelector('.formbold-form-step-4'),
+  document.querySelector('.formbold-form-step-5')
+];
 
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <label for="GPA" class="form-label">Gallons per Acre (GPA)</label>
-                        <input type="number" step="0.01" class="form-control" id="GPA" name="GPA" />
-                    </div>
+const formSubmitBtn = document.querySelector('.formbold-btn');
+const formBackBtn = document.querySelector('.formbold-back-btn');
 
-                    
-                    <!-- <div class="col-md-6">
-                        <label for="application_fees" class="form-label">Application Fees</label>
-                        <textarea class="form-control" id="application_fees" name="application_fees"></textarea>
-                    </div> -->
-                    <div class="col-md-6">
-                        <label for="attachments" class="form-label">Attachments</label>
-                        <input type="file" class="form-control" id="attachments" name="attachments" multiple />
-                    </div>
-                                        <div class="col-md-6">
-                        <label for="comments" class="form-label">Comments</label>
-                        <textarea class="form-control" id="comments" name="comments"></textarea>
-                    </div>
-                </div>
-            </fieldset>
+let currentStep = 0;
 
-            <button type="submit" class="btn btn-primary">Create Job</button>
-        </form>
+formSubmitBtn.addEventListener("click", function(event) {
+  event.preventDefault();
+  if (currentStep < formSteps.length - 1) {
+    // Move to next step
+    stepMenus[currentStep].classList.remove('active');
+    formSteps[currentStep].classList.remove('active');
+    currentStep++;
+    stepMenus[currentStep].classList.add('active');
+    formSteps[currentStep].classList.add('active');
+    
+    // Show back button from step 2 onwards
+    if (currentStep > 0) {
+      formBackBtn.classList.add('active');
+    }
+    
+    // Change button text on last step
+    if (currentStep === formSteps.length - 1) {
+      formSubmitBtn.textContent = 'Submit';
+    }
+  } else {
+    // Submit the form on the last step
+    document.querySelector('form').submit();
+  }
+});
+
+formBackBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  if (currentStep > 0) {
+    // Move to previous step
+    stepMenus[currentStep].classList.remove('active');
+    formSteps[currentStep].classList.remove('active');
+    currentStep--;
+    stepMenus[currentStep].classList.add('active');
+    formSteps[currentStep].classList.add('active');
+    
+    // Hide back button on first step
+    if (currentStep === 0) {
+      formBackBtn.classList.remove('active');
+    }
+    
+    // Change button text back to 'Next Step'
+    formSubmitBtn.textContent = 'Next Step';
+  }
+});
+</script>
         </main>
       </div>
     </div>

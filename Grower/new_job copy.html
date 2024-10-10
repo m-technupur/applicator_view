@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grower View</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 250px;
+        background-color: #f8f9fa;
+        min-height: calc(100vh - 56px);
+      }
+      .content {
+        flex-grow: 1;
+      }
+      .navbar-brand img {
+        height: 30px;
+      }
+      .img-fluid {
+    max-width: 50%;
+    height: auto;
+}
+      .active {
+        background-color: #dedede;
+      }
+      .profile-card {
+        max-width: 800px;
+      }
+      .nav-item .nav-link[data-bs-toggle="collapse"] {
+        position: relative;
+        padding-left: 2.5rem;
+      }
+      .nav-item .nav-link[data-bs-toggle="collapse"]::before {
+        content: '\f0d7';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease-in-out;
+      }
+      .nav-item .nav-link[data-bs-toggle="collapse"][aria-expanded="true"]::before {
+        transform: translateY(-50%) rotate(180deg);
+      }
+      #setupSubmenu {
+        background-color: #e9ecef;
+        border-left: 3px solid #007bff;
+        margin-left: 1.5rem;
+      }
+      #setupSubmenu .nav-link {
+        padding-left: 2rem;
+        font-size: 0.9rem;
+      }
+      #setupSubmenu .nav-link:hover {
+        background-color: #dee2e6;
+      }
+      .sidebar .nav-link {
+        color: #333;
+        font-weight: 500;
+      }
+      .sidebar .nav-link:hover {
+        background-color: #e9ecef;
+      }
+      .sidebar .nav-link.active {
+        color: #007bff;
+        background-color: #e9ecef;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"> <h3>Grower View</h3></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <!-- Notifications Dropdown -->
+            <li class="nav-item dropdown me-3">
+              <a
+                class="nav-link dropdown-toggle position-relative"
+                href="#"
+                id="notificationDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fas fa-bell"></i>
+                <span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger badge-notify"
+                >
+                  3
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end notification-dropdown"
+                aria-labelledby="notificationDropdown"
+              >
+                <li><h6 class="dropdown-header">New Bids</h6></li>
+                <li>
+                  <a class="dropdown-item notification-item" href="#">
+                    <strong>Sunrise Applicators</strong> bid $2,500 for Corn
+                    Field Spraying
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item notification-item" href="#">
+                    <strong>Green Thumb Services</strong> bid $1,800 for Soybean
+                    Pest Control
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item notification-item" href="#">
+                    <strong>AgriCare Experts</strong> bid $3,200 for Wheat
+                    Fertilization
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item text-center" href="#"
+                    >View All Notifications</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <!-- User Profile Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fas fa-user-circle me-1"></i> John Doe
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdown"
+              >
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fas fa-user me-2"></i>Profile</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fas fa-cog me-2"></i>Settings</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="../index.html"
+                    ><i class="fas fa-sign-out-alt me-2"></i>Logout</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+          <div class="position-sticky pt-3">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#setupSubmenu"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-cogs me-2"></i> Setup
+                </a>
+                <ul class="nav flex-column collapse" id="setupSubmenu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="profile.html">
+                      <i class="fas fa-user me-2"></i> Profile
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="farms.html">
+                      <i class="fas fa-tractor me-2"></i> Farms
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="crops.html">
+                      <i class="fas fa-seedling me-2"></i> Crops
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="jobs.html">
+                  <i class="fas fa-briefcase me-2"></i> Jobs
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="invoices.html">
+                  <i class="fas fa-file me-2"></i> Invoices
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-cog me-2"></i> Settings
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 content">
+          <h1 class="h2">Create a new Job</h1>
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <form id="new-job-form">
+              <div id="form-steps">
+                <!-- Step 1: Job Basics -->
+                <div class="step" id="step1">
+                  <h3>Step 1: Job Basics</h3>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="job_id" class="form-label">Job ID</label>
+                      <input type="number" class="form-control" value="4545786" id="job_id" name="job_id" readonly style="background-color: rgb(240, 233, 233);" />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="field_id" class="form-label">Field ID</label>
+                      <select id="field_id" name="field_id" class="form-control" required>
+                        <option value="">Select Field</option>
+                        <option value="301">301 - Field A</option>
+                        <option value="302">302 - Field B</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="job_status" class="form-label">Job Status</label>
+                      <select class="form-select" id="job_status" name="job_status">
+                        <option value="Requested">Requested</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="job_type" class="form-label">Job Type</label>
+                      <select class="form-select" id="job_type" name="job_type">
+                        <option value="Aerial">Aerial</option>
+                        <option value="Ground">Ground</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Step 2: Job Details -->
+                <div class="step" id="step2" style="display: none;">
+                  <h3>Step 2: Job Details</h3>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="job_category" class="form-label">Job Category (Optional)</label>
+                      <input type="text" class="form-control" id="job_category" name="job_category" />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="unit_type" class="form-label">Unit Type</label>
+                      <select class="form-select" id="unit_type" name="unit_type">
+                        <option value="Per Acre">Per Acre</option>
+                        <option value="Per Hour">Per Hour</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="quantity" class="form-label">Quantity</label>
+                      <input type="number" class="form-control" step="0.01" id="quantity" name="quantity" required />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="pest" class="form-label">Pest</label>
+                      <input type="text" class="form-control" id="pest" name="pest" required />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Step 3: Crop and Purpose -->
+                <div class="step" id="step3" style="display: none;">
+                  <h3>Step 3: Crop and Purpose</h3>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="job_pest" class="form-label">Purpose</label>
+                      <select id="job_pest" class="form-select" name="job[pest]">
+                        <option value="1">Disease</option>
+                        <option value="2">Insects</option>
+                        <option value="3">Weeds</option>
+                        <option value="4">Fertility</option>
+                        <option value="5">Seed</option>
+                        <option value="6">Disease/Insects</option>
+                        <option value="7">Disease/Weeds</option>
+                        <option value="8">Insects/Weeds</option>
+                        <option value="9">Disease/Insects/Weeds</option>
+                        <option value="10">Pre-Harvest Burndown</option>
+                        <option value="11">Weeds/Fertility</option>
+                        <option value="12">Pre-Seed Burnoff</option>
+                        <option value="13">Disease/Fertility</option>
+                        <option value="15">Disease/Fertility/Weeds</option>
+                        <option value="16">Disease/Fertility/Insects</option>
+                        <option value="14">Cover</option>
+                        <option value="17">Growth Regulator</option>
+                        <option value="18">Fertility/Insects</option>
+                        <option value="19">Defoliate</option>
+                        <option value="20">Boll Opener</option>
+                        <option value="21">Defoliate/Boll Opener</option>
+                        <option value="29">Defoliate/Boll Opener/Growth Regulator</option>
+                        <option value="22">Growth Regulator/Disease</option>
+                        <option value="26">Growth Regulator/Insects</option>
+                        <option value="27">Growth Regulator/Disease/Insects</option>
+                        <option value="23">Growth Regulator/Disease/Weeds</option>
+                        <option value="24">Site Prep</option>
+                        <option value="25">Pre-Emergence</option>
+                        <option value="28">Burndown/Pre-Emergence</option>
+                        <option value="0">Other</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="crop_id" class="form-label">Crop</label>
+                      <select class="form-select" id="crop_id" name="crop_id">
+                        <option value="1">Corn</option>
+                        <option value="2">Soybeans</option>
+                        <option value="3">Wheat</option>
+                        <option value="4">Barley</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Step 4: Dates and Application -->
+                <div class="step" id="step4" style="display: none;">
+                  <h3>Step 4: Dates and Application</h3>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="start_date" class="form-label">Start Date</label>
+                      <input type="date" class="form-control" id="start_date" name="start_date" required />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="end_date" class="form-label">End Date</label>
+                      <input type="date" class="form-control" id="end_date" name="end_date" required />
+                    </div>
+                     
+              
+            <!-- </fieldset> -->
+
+            <!-- Field Information Section -->
+            <!-- <fieldset class="border p-4 mb-4">
+                <legend class="w-auto px-2">Field Information</legend>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="center_lat" class="form-label">Center Latitude</label>
+                        <input type="number" step="0.000001" class="form-control" id="center_lat" name="center_lat" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="center_long" class="form-label">Center Longitude</label>
+                        <input type="number" step="0.000001" class="form-control" id="center_long" name="center_long" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="crop_id" class="form-label">Crop ID</label>
+                        <input type="number" class="form-control" id="crop_id" name="crop_id" required />
+                    </div>
+                </div>
+            </fieldset> -->
+
+            <!-- Applicator and Products Section -->
+            <!-- <fieldset class="border p-4 mb-4">
+                <legend class="w-auto px-2">Applicator & Products</legend>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="applicator_id" class="form-label">Applicator ID</label>
+                        <input type="number" class="form-control" id="applicator_id" name="applicator_id" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="customer_products" class="form-label">Customer Products</label>
+                        <textarea class="form-control" id="customer_products" name="customer_products"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="products_applied" class="form-label">Products Applied</label>
+                        <textarea class="form-control" id="products_applied" name="products_applied"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="purpose" class="form-label">Purpose</label>
+                        <input type="text" class="form-control" id="purpose" name="purpose" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="pest" class="form-label">Pests Targeted</label>
+                        <input type="text" class="form-control" id="pest" name="pest" />
+                    </div>
+                </div>
+            </fieldset> -->
+
+            <!-- Cost & Invoice Section -->
+            <!-- <fieldset class="border p-4 mb-4">
+                <legend class="w-auto px-2">Cost & Invoice</legend>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="total_cost" class="form-label">Total Cost</label>
+                        <input type="number" step="0.01" class="form-control" id="total_cost" name="total_cost" readonly />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="invoice_id" class="form-label">Invoice ID</label>
+                        <input type="number" class="form-control" id="invoice_id" name="invoice_id" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="applied_map" class="form-label">Applied Map ID</label>
+                        <input type="number" class="form-control" id="applied_map" name="applied_map" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="agent_id" class="form-label">Agent ID</label>
+                        <input type="number" class="form-control" id="agent_id" name="agent_id" />
+                    </div>
+                </div>
+            </fieldset> -->
+
+            <!-- Additional Information Section
+            <fieldset class="border p-4 mb-4">
+                <legend class="w-auto px-2">Additional Information</legend> -->
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label for="estimated_app_date" class="form-label">Estimated Application Date</label>
+                        <input type="date" class="form-control" id="estimated_app_date" name="estimated_app_date" />
+                    </div>
+                    <!-- <div class="col-md-6">
+                        <label for="created_by" class="form-label">Created By</label>
+                        <input type="text" class="form-control" id="created_by" name="created_by" required />
+                    </div> -->
+                    <!-- <div class="col-md-6">
+                        <label for="last_updated" class="form-label">Last Updated</label>
+                        <input type="datetime-local" class="form-control" id="last_updated" name="last_updated" readonly />
+                    </div> -->
+                    <div class="col-md-6">
+                        <label for="last_updated_by" class="form-label">Last Updated By</label>
+                        <input type="text" class="form-control" value="John Doe" id="last_updated_by" name="last_updated_by" readonly style="background-color: rgb(240, 233, 233);" />
+                    </div>
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="GPA" class="form-label">Gallons per Acre (GPA)</label>
+                        <input type="number" step="0.01" class="form-control" id="GPA" name="GPA" />
+                    </div>
+
+                    
+                    <!-- <div class="col-md-6">
+                        <label for="application_fees" class="form-label">Application Fees</label>
+                        <textarea class="form-control" id="application_fees" name="application_fees"></textarea>
+                    </div> -->
+                    <div class="col-md-6">
+                        <label for="attachments" class="form-label">Attachments</label>
+                        <input type="file" class="form-control" id="attachments" name="attachments" multiple />
+                    </div>
+                                        <div class="col-md-6">
+                        <label for="comments" class="form-label">Comments</label>
+                        <textarea class="form-control" id="comments" name="comments"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="btn btn-primary">Create Job</button>
+        </form>
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grower View</title>
+    <title>Applicator View</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -85,7 +85,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"> <h3>Grower View</h3></a>
+        <a class="navbar-brand" href="#"> <h3>Applicator View</h3></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -193,37 +193,51 @@
         <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
           <div class="position-sticky pt-3">
             <ul class="nav flex-column">
-              <!-- Existing nav items -->
               <li class="nav-item">
-                <a class="nav-link" href="profile.html">
-                  <i class="fas fa-user me-2"></i> Profile
+                <a
+                  class="nav-link"
+                  href="#"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#setupSubmenu"
+                  aria-expanded="false"
+                >
+                  Setup
                 </a>
+                <ul class="nav flex-column collapse" id="setupSubmenu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="profile.html">
+                      <i class="fas fa-user me-2"></i> Profile
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="crops.html">
+                      <i class="fas fa-seedling me-2"></i> Crops
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pilots.html">
+                      <i class="fas fa-user-tie me-2"></i> Pilots
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="users.html">
+                      <i class="fas fa-users me-2"></i> Users
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="equipment.html">
+                      <i class="fas fa-tractor me-2"></i> Equipment
+                    </a>
+                  </li>
+                </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="farms.html">
-                  <i class="fas fa-tractor me-2"></i> Farms
-                </a>
-              </li>
-              <!-- Crop submenu -->
-              <li class="nav-item">
-                <a class="nav-link" href="crops.html">
-                  <i class="fas fa-seedling me-2"></i> Crops
-                </a>
-              </li>
-              <!-- Rest of the nav items -->
               <li class="nav-item">
                 <a class="nav-link" href="jobs.html">
                   <i class="fas fa-briefcase me-2"></i> Jobs
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="bids.html">
-                  <i class="fas fa-gavel me-2"></i> Bids
-                </a>
-              </li>
-
-              <li class="nav-item active">
-                <a class="nav-link active" href="invoices.html">
+                <a class="nav-link" href="invoices.html">
                   <i class="fas fa-file me-2"></i> Invoices
                 </a>
               </li>
@@ -238,108 +252,67 @@
 
         <!-- Main Content -->
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 content">
+          <!-- Crops Section -->
           <div
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
           >
-            <h1 class="h2">Invoices</h1>
-            <a href="new_invoice.html" class="btn btn-primary"
-              >Add New Invoice</a
-            >
+            <h1 class="h2">Equipment</h1>
+            <a href="#" class="btn btn-primary">Add New Equipment</a>
           </div>
 
-          <!-- Invoices Form -->
-          <form>
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <label for="invoice_id" class="form-label"
-                  ><strong>Invoice ID:</strong></label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="invoice_id"
-                  value="101"
-                />
-              </div>
-              <div class="col-md-6">
-                <label for="job_id" class="form-label"
-                  ><strong>Job ID:</strong></label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="job_id"
-                  value="201"
-                />
-              </div>
+          <!-- Crops Listing Table -->
+          <div class="crops-listing">
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>ID</th>
+                    <th>Serial Number (SN)</th>
+                    <th>Type</th>
+                    <th>Registered Device</th>
+                    <th>Warranty Expiration</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>SN123456</td>
+                    <td>Drone</td>
+                    <td>Yes</td>
+                    <td>2024-12-31</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>SN789012</td>
+                    <td>Tractor</td>
+                    <td>No</td>
+                    <td>2023-06-30</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>SN345678</td>
+                    <td>Sprayer</td>
+                    <td>Yes</td>
+                    <td>2025-03-15</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>SN901234</td>
+                    <td>Drone</td>
+                    <td>Yes</td>
+                    <td>2024-09-30</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>SN567890</td>
+                    <td>Tractor</td>
+                    <td>No</td>
+                    <td>2023-11-30</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <label for="grower_id" class="form-label"
-                  ><strong>Grower ID:</strong></label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="grower_id"
-                  value="301"
-                />
-              </div>
-              <div class="col-md-6">
-                <label for="amount_due" class="form-label"
-                  ><strong>Amount Due:</strong></label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="amount_due"
-                  value="1500.00"
-                />
-              </div>
-            </div>
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <label for="payment_status" class="form-label"
-                  ><strong>Payment Status:</strong></label
-                >
-                <select class="form-select" id="payment_status">
-                  <option value="Paid" selected>Paid</option>
-                  <option value="Pending">Pending</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <label for="payment_provider" class="form-label"
-                  ><strong>Payment Provider:</strong></label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="payment_provider"
-                  value="Stripe"
-                />
-              </div>
-            </div>
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <label for="date_paid" class="form-label"
-                  ><strong>Date Paid:</strong></label
-                >
-                <input
-                  type="date"
-                  class="form-control"
-                  id="date_paid"
-                  value="2023-10-01"
-                />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <button type="submit" class="btn btn-primary">
-                  Save Invoice
-                </button>
-              </div>
-            </div>
-          </form>
+          </div>
         </main>
       </div>
     </div>

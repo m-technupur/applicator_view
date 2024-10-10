@@ -34,12 +34,51 @@
     height: auto;
 }
       .active {
-    background-color: #dedede;
-}
-  .profile-card {
-            max-width: 800px;
-
-        }
+        background-color: #dedede;
+      }
+      .profile-card {
+        max-width: 800px;
+      }
+      .nav-item .nav-link[data-bs-toggle="collapse"] {
+        position: relative;
+        padding-left: 2.5rem;
+      }
+      .nav-item .nav-link[data-bs-toggle="collapse"]::before {
+        content: '\f0d7';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease-in-out;
+      }
+      .nav-item .nav-link[data-bs-toggle="collapse"][aria-expanded="true"]::before {
+        transform: translateY(-50%) rotate(180deg);
+      }
+      #setupSubmenu {
+        background-color: #e9ecef;
+        border-left: 3px solid #007bff;
+        margin-left: 1.5rem;
+      }
+      #setupSubmenu .nav-link {
+        padding-left: 2rem;
+        font-size: 0.9rem;
+      }
+      #setupSubmenu .nav-link:hover {
+        background-color: #dee2e6;
+      }
+      .sidebar .nav-link {
+        color: #333;
+        font-weight: 500;
+      }
+      .sidebar .nav-link:hover {
+        background-color: #e9ecef;
+      }
+      .sidebar .nav-link.active {
+        color: #007bff;
+        background-color: #e9ecef;
+      }
     </style>
   </head>
   <body>
@@ -127,7 +166,7 @@
                 </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <a class="dropdown-item" href="#"
+                  <a class="dropdown-item" href="../index.html"
                     ><i class="fas fa-sign-out-alt me-2"></i>Logout</a
                   >
                 </li>
