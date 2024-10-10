@@ -613,6 +613,56 @@ body {
                             <input type="text" class="formbold-form-input" id="pest" name="pest" required />
                         </div>
                     </div>
+                            <div class="container mt-5">
+      <div class="d-flex justify-content-between">
+        <h3>Products</h3>
+        <button class="btn btn-primary mb-3" onclick="addClient()">
+          Add New Product
+        </button>
+      </div>
+
+      <table class="table table-responsive table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Rate</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="clientTableBody"></tbody>
+      </table>
+    </div>
+
+    <script>
+      let clientIDCounter = 0;
+
+      function addClient() {
+        clientIDCounter = clientIDCounter + 1;
+
+        // Create a new row
+        const tableBody = document.getElementById("clientTableBody");
+        const newRow = document.createElement("tr");
+
+        // Append data to the row
+        newRow.innerHTML = `
+          <td>${clientIDCounter}</td>
+          <td><input placeholder="Product" type="text" class="form-control"  /></td>
+          <td><input placeholder="Quantity" type="text" class="form-control"  /></td>
+          <td><input placeholder="Rate" type="text" class="form-control"  /></td>
+          <td><button class="btn btn-danger" onclick="deleteClient(this)">Delete</button></td>
+        `;
+
+        // Append the new row to the table body
+        tableBody.appendChild(newRow);
+      }
+
+      function deleteClient(button) {
+        // Remove the row of the clicked button
+        button.parentElement.parentElement.remove();
+      }
+    </script>
                 </div>
 
                 <div class="formbold-form-step-4">
