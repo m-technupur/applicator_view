@@ -369,6 +369,9 @@
                         <button class="btn btn-sm btn-success">
                           <i class="fas fa-gavel"></i> Bid
                         </button>
+                        <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#quotesModal" data-job-id="1001">
+                          <i class="fas fa-list"></i> Show Quotes
+                        </button>
                       </td>
                     </tr>
                     <tr>
@@ -1134,6 +1137,74 @@
             document.getElementById("bidForm").reportValidity();
           }
         });
+    </script>
+
+    <!-- Quotes Modal -->
+    <div class="modal fade" id="quotesModal" tabindex="-1" aria-labelledby="quotesModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="quotesModalLabel">Quotes for Job <span id="jobIdSpan"></span></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Applicator</th>
+                  <th>Quote Amount</th>
+                  <th>Estimated Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="quotesTableBody">
+                <!-- Quotes will be dynamically inserted here -->
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ... (previous script content) ...
+
+      // Function to populate the quotes modal
+      function populateQuotesModal(jobId) {
+        const quotesTableBody = document.getElementById('quotesTableBody');
+        quotesTableBody.innerHTML = ''; // Clear existing content
+
+        // Sample quotes data (replace this with actual data fetching logic)
+        const quotes = [
+          { applicator: "John's Spraying Service", amount: "$2,300", date: "2024-05-14", status: "Pending" },
+          { applicator: "Green Thumb Fertilizers", amount: "$2,500", date: "2024-05-15", status: "Pending" },
+          { applicator: "Crop Care Experts", amount: "$2,400", date: "2024-05-16", status: "Pending" },
+        ];
+
+        quotes.forEach(quote => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${quote.applicator}</td>
+            <td>${quote.amount}</td>
+            <td>${quote.date}</td>
+            <td><span class="badge bg-${quote.status === 'Accepted' ? 'success' : quote.status === 'Rejected' ? 'danger' : 'warning'}">${quote.status}</span></td>
+          `;
+          quotesTableBody.appendChild(row);
+        });
+
+        document.getElementById('jobIdSpan').textContent = jobId;
+      }
+
+      // Event listener for the "Show Quotes" button
+      document.addEventListener('click', function(e) {
+        if (e.target.closest('.btn-info')) {
+          const jobId = e.target.closest('tr').cells[0].textContent;
+          populateQuotesModal(jobId);
+        }
+      });
     </script>
   </body>
 </html>
