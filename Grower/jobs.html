@@ -357,7 +357,12 @@
                         <button class="btn btn-sm btn-warning">
                           <i class="fas fa-edit"></i> Edit
                         </button>
-                        <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#quotesModal" data-job-id="1001">
+                        <button
+                          class="btn btn-sm btn-info"
+                          data-bs-toggle="modal"
+                          data-bs-target="#quotesModal"
+                          data-job-id="1001"
+                        >
                           <i class="fas fa-list"></i> Show Quotes
                         </button>
                       </td>
@@ -379,6 +384,14 @@
                         <button class="btn btn-sm btn-warning">
                           <i class="fas fa-edit"></i> Edit
                         </button>
+                        <button
+                          class="btn btn-sm btn-info"
+                          data-bs-toggle="modal"
+                          data-bs-target="#quotesModal"
+                          data-job-id="1001"
+                        >
+                          <i class="fas fa-list"></i> Show Quotes
+                        </button>
                       </td>
                     </tr>
                     <tr>
@@ -395,8 +408,16 @@
                         <button class="btn btn-sm btn-primary">
                           <i class="fas fa-eye"></i> View
                         </button>
-                        <button class="btn btn-sm btn-secondary">
-                          <i class="fas fa-file-alt"></i> Invoice
+                        <button class="btn btn-sm btn-warning">
+                          <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button
+                          class="btn btn-sm btn-info"
+                          data-bs-toggle="modal"
+                          data-bs-target="#quotesModal"
+                          data-job-id="1001"
+                        >
+                          <i class="fas fa-list"></i> Show Quotes
                         </button>
                       </td>
                     </tr>
@@ -417,6 +438,14 @@
                         <button class="btn btn-sm btn-warning">
                           <i class="fas fa-edit"></i> Edit
                         </button>
+                        <button
+                          class="btn btn-sm btn-info"
+                          data-bs-toggle="modal"
+                          data-bs-target="#quotesModal"
+                          data-job-id="1001"
+                        >
+                          <i class="fas fa-list"></i> Show Quotes
+                        </button>
                       </td>
                     </tr>
                     <tr>
@@ -433,8 +462,16 @@
                         <button class="btn btn-sm btn-primary">
                           <i class="fas fa-eye"></i> View
                         </button>
-                        <button class="btn btn-sm btn-danger">
-                          <i class="fas fa-trash"></i> Delete
+                        <button class="btn btn-sm btn-warning">
+                          <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button
+                          class="btn btn-sm btn-info"
+                          data-bs-toggle="modal"
+                          data-bs-target="#quotesModal"
+                          data-job-id="1001"
+                        >
+                          <i class="fas fa-list"></i> Show Quotes
                         </button>
                       </td>
                     </tr>
@@ -822,12 +859,25 @@
     </script>
 
     <!-- Quotes Modal -->
-    <div class="modal fade" id="quotesModal" tabindex="-1" aria-labelledby="quotesModalLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="quotesModal"
+      tabindex="-1"
+      aria-labelledby="quotesModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="quotesModalLabel">Quotes for Job <span id="jobIdSpan"></span></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="quotesModalLabel">
+              Quotes for Job <span id="jobIdSpan"></span>
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body">
             <table class="table table-striped">
@@ -836,7 +886,6 @@
                   <th>Applicator</th>
                   <th>Quote Amount</th>
                   <th>Estimated Date</th>
-                  <th>Status</th>
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -846,7 +895,13 @@
             </table>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
           </div>
         </div>
       </div>
@@ -857,18 +912,30 @@
 
       // Function to populate the quotes modal
       function populateQuotesModal(jobId) {
-        const quotesTableBody = document.getElementById('quotesTableBody');
-        quotesTableBody.innerHTML = ''; // Clear existing content
+        const quotesTableBody = document.getElementById("quotesTableBody");
+        quotesTableBody.innerHTML = ""; // Clear existing content
 
         // Sample quotes data (replace this with actual data fetching logic)
         const quotes = [
-          { applicator: "John's Spraying Service", amount: "$2,300", date: "2024-05-14" },
-          { applicator: "Green Thumb Fertilizers", amount: "$2,500", date: "2024-05-15" },
-          { applicator: "Crop Care Experts", amount: "$2,400", date: "2024-05-16" },
+          {
+            applicator: "John's Spraying Service",
+            amount: "$2,300",
+            date: "2024-05-14",
+          },
+          {
+            applicator: "Green Thumb Fertilizers",
+            amount: "$2,500",
+            date: "2024-05-15",
+          },
+          {
+            applicator: "Crop Care Experts",
+            amount: "$2,400",
+            date: "2024-05-16",
+          },
         ];
 
-        quotes.forEach(quote => {
-          const row = document.createElement('tr');
+        quotes.forEach((quote) => {
+          const row = document.createElement("tr");
           row.innerHTML = `
             <td>${quote.applicator}</td>
             <td>${quote.amount}</td>
@@ -881,22 +948,26 @@
           quotesTableBody.appendChild(row);
         });
 
-        document.getElementById('jobIdSpan').textContent = jobId;
+        document.getElementById("jobIdSpan").textContent = jobId;
       }
 
       // Event listeners for accept and reject buttons
-      document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('accept-quote')) {
-          e.target.closest('tr').querySelector('td:last-child').innerHTML = '<span class="badge bg-success">Accepted</span>';
-        } else if (e.target.classList.contains('reject-quote')) {
-          e.target.closest('tr').querySelector('td:last-child').innerHTML = '<span class="badge bg-danger">Rejected</span>';
+      document.addEventListener("click", function (e) {
+        if (e.target.classList.contains("accept-quote")) {
+          e.target.closest("tr").querySelector("td:last-child").innerHTML =
+            '<span class="badge bg-success">Accepted</span>';
+        } else if (e.target.classList.contains("reject-quote")) {
+          e.target.closest("tr").querySelector("td:last-child").innerHTML =
+            '<span class="badge bg-danger">Rejected</span>';
         }
       });
 
       // Event listener for the "Show Quotes" button
-      document.addEventListener('click', function(e) {
-        if (e.target.closest('.btn-info')) {
-          const jobId = e.target.closest('.btn-info').getAttribute('data-job-id');
+      document.addEventListener("click", function (e) {
+        if (e.target.closest(".btn-info")) {
+          const jobId = e.target
+            .closest(".btn-info")
+            .getAttribute("data-job-id");
           populateQuotesModal(jobId);
         }
       });
