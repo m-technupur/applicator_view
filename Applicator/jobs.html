@@ -270,15 +270,15 @@
             <li class="nav-item" role="presentation">
               <button
                 class="nav-link active"
-                id="requested-tab"
+                id="job-requests-tab"
                 data-bs-toggle="tab"
-                data-bs-target="#requested"
+                data-bs-target="#job-requests"
                 type="button"
                 role="tab"
-                aria-controls="requested"
-                aria-selected="false"
+                aria-controls="job-requests"
+                aria-selected="true"
               >
-                Requested
+                Job Requests
               </button>
             </li>
             <li class="nav-item" role="presentation">
@@ -309,140 +309,114 @@
                 Completed
               </button>
             </li>
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link"
-                id="cancelled-tab"
-                data-bs-toggle="tab"
-                data-bs-target="#cancelled"
-                type="button"
-                role="tab"
-                aria-controls="cancelled"
-                aria-selected="false"
-              >
-                Cancelled
-              </button>
-            </li>
           </ul>
 
           <!-- Tab Content -->
           <div class="tab-content" id="jobTabsContent">
             <div
               class="tab-pane fade show active"
-              id="requested"
+              id="job-requests"
               role="tabpanel"
-              aria-labelledby="requested-tab"
+              aria-labelledby="job-requests-tab"
             >
-              <!-- Requested Jobs Table -->
+              <!-- Job Requests Table -->
               <div class="table-responsive mt-3">
                 <table class="table table-striped table-hover table-bordered">
                   <thead class="thead-dark">
                     <tr>
                       <th>Job ID</th>
-                      <th>Status</th>
                       <th>Date Requested</th>
+                      <th>Grower</th>
                       <th>Field</th>
                       <th>Crop</th>
                       <th>Job Type</th>
-                      <th>Applicator</th>
                       <th>Est. App Date</th>
-                      <th>Total Cost</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>1001</td>
-                      <td><span class="badge bg-warning">Requested</span></td>
                       <td>2024-05-01</td>
+                      <td>Smith Farms</td>
                       <td>Field A</td>
                       <td>Corn</td>
                       <td>Spraying</td>
-                      <td>John's Spraying Service</td>
                       <td>2024-05-15</td>
-                      <td>$2,500</td>
                       <td>
                         <button class="btn btn-sm btn-primary">
                           <i class="fas fa-eye"></i> View
                         </button>
-                        <button class="btn btn-sm btn-warning">
-                          <i class="fas fa-edit"></i> Edit
+                        <button class="btn btn-sm btn-success">
+                          <i class="fas fa-gavel"></i> Bid
                         </button>
                       </td>
                     </tr>
                     <tr>
                       <td>1002</td>
-                      <td><span class="badge bg-warning">Requested</span></td>
                       <td>2024-05-02</td>
+                      <td>Green Valley LLC</td>
                       <td>Field B</td>
                       <td>Soybeans</td>
                       <td>Fertilizing</td>
-                      <td>Green Thumb Fertilizers</td>
                       <td>2024-05-10</td>
-                      <td>$1,800</td>
                       <td>
                         <button class="btn btn-sm btn-primary">
                           <i class="fas fa-eye"></i> View
                         </button>
-                        <button class="btn btn-sm btn-warning">
-                          <i class="fas fa-edit"></i> Edit
+                        <button class="btn btn-sm btn-success">
+                          <i class="fas fa-gavel"></i> Bid
                         </button>
                       </td>
                     </tr>
                     <tr>
                       <td>1003</td>
-                      <td><span class="badge bg-warning">Requested</span></td>
                       <td>2024-04-15</td>
+                      <td>Harvest King Inc.</td>
                       <td>Field C</td>
                       <td>Wheat</td>
                       <td>Harvesting</td>
-                      <td>Harvest Heroes</td>
                       <td>2024-05-01</td>
-                      <td>$3,500</td>
                       <td>
                         <button class="btn btn-sm btn-primary">
                           <i class="fas fa-eye"></i> View
                         </button>
-                        <button class="btn btn-sm btn-secondary">
-                          <i class="fas fa-file-alt"></i> Invoice
+                        <button class="btn btn-sm btn-success">
+                          <i class="fas fa-gavel"></i> Bid
                         </button>
                       </td>
                     </tr>
                     <tr>
                       <td>1004</td>
-                      <td><span class="badge bg-warning">Requested</span></td>
                       <td>2024-05-05</td>
+                      <td>Sunrise Growers</td>
                       <td>Field D</td>
                       <td>Barley</td>
                       <td>Planting</td>
-                      <td>Seed Sowers Inc.</td>
                       <td>2024-05-20</td>
-                      <td>$1,200</td>
                       <td>
                         <button class="btn btn-sm btn-primary">
                           <i class="fas fa-eye"></i> View
                         </button>
-                        <button class="btn btn-sm btn-warning">
-                          <i class="fas fa-edit"></i> Edit
+                        <button class="btn btn-sm btn-success">
+                          <i class="fas fa-gavel"></i> Bid
                         </button>
                       </td>
                     </tr>
                     <tr>
                       <td>1005</td>
-                      <td><span class="badge bg-warning">Requested</span></td>
                       <td>2024-04-20</td>
+                      <td>Golden Fields Co.</td>
                       <td>Field E</td>
                       <td>Canola</td>
                       <td>Pest Control</td>
-                      <td>Bug Busters</td>
                       <td>2024-05-05</td>
-                      <td>$900</td>
                       <td>
                         <button class="btn btn-sm btn-primary">
                           <i class="fas fa-eye"></i> View
                         </button>
-                        <button class="btn btn-sm btn-danger">
-                          <i class="fas fa-trash"></i> Delete
+                        <button class="btn btn-sm btn-success">
+                          <i class="fas fa-gavel"></i> Bid
                         </button>
                       </td>
                     </tr>
@@ -819,13 +793,22 @@
           const rows = Array.from(tbody.querySelectorAll("tr"));
 
           rows.sort((a, b) => {
-            const dateA = new Date(a.cells[7].textContent);
-            const dateB = new Date(b.cells[7].textContent);
+            const dateA = new Date(a.cells[6].textContent);
+            const dateB = new Date(b.cells[6].textContent);
             return dateA - dateB;
           });
 
           rows.forEach((row) => tbody.appendChild(row));
         });
+      });
+
+      // JavaScript to handle bid button click
+      document.addEventListener("click", function (e) {
+        if (e.target && e.target.classList.contains("btn-success")) {
+          const jobId = e.target.closest("tr").cells[0].textContent;
+          alert(`Bid form for Job ID: ${jobId} will open here.`);
+          // Here you would typically open a modal or navigate to a bid form
+        }
       });
     </script>
   </body>
