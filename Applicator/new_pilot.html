@@ -252,227 +252,176 @@
 
         <!-- Main Content -->
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 content">
-          <h2>Create New Pilot Record</h2>
+          <h2 class="mb-4">Create New Pilot Record</h2>
           <form>
-            <div class="form row">
-              <div class="form-group col-md-4">
-                <label for="first_name">First Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="first_name"
-                  placeholder="First Name"
-                />
+            <div class="card mb-4">
+              <div class="card-header">
+                <h4>Personal Information</h4>
               </div>
-              <div class="form-group col-md-4">
-                <label for="last_name">Last Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="last_name"
-                  placeholder="Last Name"
-                />
-              </div>
-
-              <div class="form-group col-md-4">
-                <label for="employee_id">Employee ID</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="employee_id"
-                  placeholder="Employee ID"
-                />
-              </div>
-              <div class="form-group col-md-4">
-                <label for="applicator_id">Applicator ID</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="applicator_id"
-                  placeholder="Applicator ID"
-                />
-              </div>
-
-              <div class="form-group col-md-4">
-                <label for="phone_number">Phone Number</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="phone_number"
-                  placeholder="Phone Number"
-                />
-              </div>
-              <div class="form-group col-md-4">
-                <label for="title">Title</label>
-                <select class="form-control" id="title">
-                  <option>Pilot</option>
-                  <option>Operator</option>
-                  <option>Manager</option>
-                  <option>Supervisor</option>
-                </select>
-              </div>
-
-              <div class="form-group col-md-4">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  placeholder="Email"
-                />
-              </div>
-              <div class="form-group col-md-4">
-                <label for="auto_accept_jobs">Auto Accept Jobs</label>
-                <select class="form-control" id="auto_accept_jobs">
-                  <option value="1">Yes</option>
-                  <option value="0">No</option>
-                </select>
-              </div>
-
-              <div class="form-group col-md-4">
-                <label for="can_view_pricing_details"
-                  >Can View Pricing Details</label
-                >
-                <select class="form-control" id="can_view_pricing_details">
-                  <option value="1">Yes</option>
-                  <option value="0">No</option>
-                </select>
-              </div>
-              <div class="form-group col-md-4">
-                <label for="code">Code</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="code"
-                  placeholder="Code"
-                />
-              </div>
-
-              <div class="form-group col-md-4">
-                <label for="business_name">Business Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="business_name"
-                  placeholder="Business Name"
-                />
-              </div>
-              <div class="form-group col-md-4">
-                <label for="pilot_operator_pest_license_number"
-                  >Pilot Operator Pest License Number</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="pilot_operator_pest_license_number"
-                  placeholder="Pilot Operator Pest License Number"
-                />
-              </div>
-
-              <div class="form-group col-md-4">
-                <label for="business_pest_license_number"
-                  >Business Pest License Number</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="business_pest_license_number"
-                  placeholder="Business Pest License Number"
-                />
-              </div>
-              <div class="form-group col-md-4">
-                <label for="pilot_operator_license_number"
-                  >Pilot Operator License Number</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="pilot_operator_license_number"
-                  placeholder="Pilot Operator License Number"
-                />
-              </div>
-
-              <div class="form-group col-md-4">
-                <label for="plane_n_unit_number">Plane/Unit Number</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="plane_n_unit_number"
-                  placeholder="Plane/Unit Number"
-                />
-              </div>
-              <div class="form-group col-md-4">
-                <label for="address">Address</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="address"
-                  placeholder="Address"
-                />
-              </div>
-
-              <div class="form-group col-md-4">
-                <label for="city">City</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="city"
-                  placeholder="City"
-                />
-              </div>
-              <div class="form-group col-md-4">
-                <label for="state">State</label>
-                <select class="form-control" id="state">
-                  <option value="AL">Alabama</option>
-                  <option value="AK">Alaska</option>
-                  <option value="AZ">Arizona</option>
-                  <option value="AR">Arkansas</option>
-                  <option value="CA">California</option>
-                  <!-- Add more states as needed -->
-                </select>
-              </div>
-              <div class="form-group col-md-4">
-                <label for="zip">ZIP</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="zip"
-                  placeholder="ZIP"
-                />
-              </div>
-
-              <div class="form-group col-md-4">
-                <label for="per_acre">Per Acre</label>
-                <input
-                  type="number"
-                  step="0.01"
-                  class="form-control"
-                  id="per_acre"
-                  placeholder="Per Acre"
-                />
-              </div>
-              <div class="form-group col-md-4">
-                <label for="percent_of_fees">Percent of Fees</label>
-                <input
-                  type="number"
-                  step="0.01"
-                  class="form-control"
-                  id="percent_of_fees"
-                  placeholder="Percent of Fees"
-                />
-              </div>
-              <div class="form-group col-md-4">
-                <label for="dollar_per_acre">Dollar per Acre</label>
-                <input
-                  type="number"
-                  step="0.01"
-                  class="form-control"
-                  id="dollar_per_acre"
-                  placeholder="Dollar per Acre"
-                />
+              <div class="card-body">
+                <div class="row">
+                  <div class="form-group col-md-4 mb-3">
+                    <label for="first_name">First Name</label>
+                    <input type="text" class="form-control" id="first_name" placeholder="First Name" />
+                  </div>
+                  <div class="form-group col-md-4 mb-3">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" class="form-control" id="last_name" placeholder="Last Name" />
+                  </div>
+                  <div class="form-group col-md-4 mb-3">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-4 mb-3">
+                    <label for="phone_number">Phone Number</label>
+                    <input type="text" class="form-control" id="phone_number" placeholder="Phone Number" />
+                  </div>
+                  <div class="form-group col-md-4 mb-3">
+                    <label for="title">Title</label>
+                    <select class="form-control" id="title">
+                      <option>Pilot</option>
+                      <option>Operator</option>
+                      <option>Manager</option>
+                      <option>Supervisor</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-4 mb-3">
+                    <label for="employee_id">Employee ID</label>
+                    <input type="number" class="form-control" id="employee_id" placeholder="Employee ID" />
+                  </div>
+                </div>
               </div>
             </div>
+
+            <div class="card mb-4">
+              <div class="card-header">
+                <h4>Business Information</h4>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="form-group col-md-6 mb-3">
+                    <label for="business_name">Business Name</label>
+                    <input type="text" class="form-control" id="business_name" placeholder="Business Name" />
+                  </div>
+                  <div class="form-group col-md-6 mb-3">
+                    <label for="applicator_id">Applicator ID</label>
+                    <input type="number" class="form-control" id="applicator_id" placeholder="Applicator ID" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-12 mb-3">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="Address" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-4 mb-3">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" id="city" placeholder="City" />
+                  </div>
+                  <div class="form-group col-md-4 mb-3">
+                    <label for="state">State</label>
+                    <select class="form-control" id="state">
+                      <option value="AL">Alabama</option>
+                      <option value="AK">Alaska</option>
+                      <option value="AZ">Arizona</option>
+                      <option value="AR">Arkansas</option>
+                      <option value="CA">California</option>
+                      <!-- Add more states as needed -->
+                    </select>
+                  </div>
+                  <div class="form-group col-md-4 mb-3">
+                    <label for="zip">ZIP</label>
+                    <input type="text" class="form-control" id="zip" placeholder="ZIP" />
+                  </div>
+                </div>
+              </div>
             </div>
+
+            <div class="card mb-4">
+              <div class="card-header">
+                <h4>License Information</h4>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="form-group col-md-6 mb-3">
+                    <label for="pilot_operator_pest_license_number">Pilot Operator Pest License Number</label>
+                    <input type="text" class="form-control" id="pilot_operator_pest_license_number" placeholder="Pilot Operator Pest License Number" />
+                  </div>
+                  <div class="form-group col-md-6 mb-3">
+                    <label for="business_pest_license_number">Business Pest License Number</label>
+                    <input type="text" class="form-control" id="business_pest_license_number" placeholder="Business Pest License Number" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-6 mb-3">
+                    <label for="pilot_operator_license_number">Pilot Operator License Number</label>
+                    <input type="text" class="form-control" id="pilot_operator_license_number" placeholder="Pilot Operator License Number" />
+                  </div>
+                  <div class="form-group col-md-6 mb-3">
+                    <label for="plane_n_unit_number">Plane/Unit Number</label>
+                    <input type="text" class="form-control" id="plane_n_unit_number" placeholder="Plane/Unit Number" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-header">
+                <h4>Pricing Information</h4>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="form-group col-md-4 mb-3">
+                    <label for="per_acre">Per Acre</label>
+                    <input type="number" step="0.01" class="form-control" id="per_acre" placeholder="Per Acre" />
+                  </div>
+                  <div class="form-group col-md-4 mb-3">
+                    <label for="percent_of_fees">Percent of Fees</label>
+                    <input type="number" step="0.01" class="form-control" id="percent_of_fees" placeholder="Percent of Fees" />
+                  </div>
+                  <div class="form-group col-md-4 mb-3">
+                    <label for="dollar_per_acre">Dollar per Acre</label>
+                    <input type="number" step="0.01" class="form-control" id="dollar_per_acre" placeholder="Dollar per Acre" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-header">
+                <h4>Additional Settings</h4>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="form-group col-md-6 mb-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="auto_accept_jobs">
+                      <label class="form-check-label" for="auto_accept_jobs">
+                        Auto Accept Jobs
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6 mb-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="can_view_pricing_details">
+                      <label class="form-check-label" for="can_view_pricing_details">
+                        Can View Pricing Details
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-6 mb-3">
+                    <label for="code">Code</label>
+                    <input type="text" class="form-control" id="code" placeholder="Code" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <button type="submit" class="btn btn-primary">Create Pilot</button>
           </form>
         </main>
